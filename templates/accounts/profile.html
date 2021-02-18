@@ -3,12 +3,20 @@
 {% load static %} 
 {% block content %}
 {% if request.user.profile.profile_picture %}
-<h2>{{ request.user.profile.name}}</h2>
-<img src="{{request.user.profile.profile_picture.url}}" width="200" height="200" alt="not working boss"> {% else %}
-<img src="{%static 'images/default.jpg'%}" width="200" height="200" alt="not working boss"> {% endif %}
-<p>{{profile.bio}}</p>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %} {{form.as_p}}
-    <button type="submit">Update</button>
-</form>
+<div class="profile-container">
+    <div class="profile-information">
+    <h2>{{ request.user.profile.name}}</h2>
+    <img src="{{request.user.profile.profile_picture.url}}" width="200" height="200" alt="not working boss"> {% else %}
+    <img src="{%static 'images/default.jpg'%}" width="200" height="200" alt="not working boss"> {% endif %}
+    <p>{{profile.bio}}</p>
+    </div>
+    <div class="profile-form">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %} {{form.as_p}}
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+</div>
+
 {% endblock content %}
