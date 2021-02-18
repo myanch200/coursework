@@ -6,7 +6,7 @@
     {% if user.is_authenticated %}
 
     <li class="nav-item-n">
-        <a class="" href="#">Hi, {{ user.username }}</a>
+        <a class="" href="{% url 'accounts:profile' %}">Hi, {{ user.username }}</a>
     </li>
 
     <li class="nav-item-right">
