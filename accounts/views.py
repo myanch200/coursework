@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from . models import Profile
 from .forms import RegisterUserForm , UpdateProfileForm
+import os
 # Create your views here.
 def home(request):
     return render(request,'accounts/index.html',{})
@@ -53,6 +54,7 @@ def profile(request):
     profile = Profile.objects.get(user = request.user)
     form = UpdateProfileForm(instance = profile)
     if request.method == 'POST':
+        
         form = UpdateProfileForm(request.POST,request.FILES,instance = profile)
         if form.is_valid():
             form.save()

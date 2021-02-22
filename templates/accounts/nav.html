@@ -5,10 +5,12 @@
     </li>
     {% if user.is_authenticated %}
 
-    <li class="nav-item-n">
+    <li class="profile-link">
         <a class="" href="{% url 'accounts:profile' %}">Hi, {{ user.username }}</a>
     </li>
-
+    <li class="profile-link">
+        <a class="" href="{% url 'tracker:dashboard' %}">Tracker</a>
+    </li>
     <li class="nav-item-right">
         <a class="btn-register" href="{% url 'accounts:logout' %}">Log out</a>
     </li>
