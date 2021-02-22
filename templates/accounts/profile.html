@@ -1,21 +1,42 @@
 {% extends 'accounts/base.html' %}
-
-{% load static %} 
+{% load static %}
 {% block content %}
-{% if request.user.profile.profile_picture %}
 <div class="profile-container">
-    <div class="profile-information">
+    <div class="profile-info">
     <h2>{{ request.user.profile.name}}</h2>
-    <img src="{{request.user.profile.profile_picture.url}}" width="200" height="200" alt="not working boss"> {% else %}
-    <img src="{%static 'images/default.jpg'%}" width="200" height="200" alt="not working boss"> {% endif %}
+    {% if request.user.profile.profile_picture %}
+
+    <img src="{{request.user.profile.profile_picture.url}}" width="200" height="200" alt="not working boss">
+     {% else %}
+    <img src="{%static 'images/default.jpg' %}" width="200" height="200" alt="not working boss"> {% endif %}
     <p>{{profile.bio}}</p>
     </div>
-    <div class="profile-form">
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %} {{form.as_p}}
-            <button type="submit">Update</button>
+   
+        <form  class="profile-form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %} 
+
+             
+        <div class="input">
+            {{form.name.label}}
+            {{form.name}}
+        </div>
+        <div class="input">
+            {{form.profile_picture.label}}
+            {{form.profile_picture}}
+        </div>
+        <div class="input">
+            {{form.bio.label}}
+            {{form.bio}}
+        </div>
+      
+        <button class="btn-register-form" type="submit">Login</button>
+            {% if messages %}
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }} msg" {% endif %}>{{message}}</li>
+                {% endfor %}
+            {% endif %}
         </form>
-    </div>
+    
 
 </div>
 
