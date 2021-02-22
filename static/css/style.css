@@ -131,6 +131,15 @@ h1 {
     padding: 60px;
 }
 
+.errors-container {
+    width: 150;
+    height: fit-content;
+    background-color: #C5283D;
+    padding: 15px;
+    color:white;
+    font-weight: bold;
+}
+
 .input {
     padding: 10px;
 }
@@ -281,5 +290,5 @@ h1 {
     flex-direction: column;
     height: 80vh;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem; 
 }

@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, reverse
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
@@ -17,6 +17,8 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect("accounts:login")
+       
+             
     context = {
         'form': form,
     }
