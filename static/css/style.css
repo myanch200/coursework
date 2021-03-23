@@ -204,8 +204,10 @@ h1 {
 }
 
 /*Arrun */
+p{
+    font-family: 'Poppins', sans-serif;
+}
 .textBox{
-    font-family: 'Montserrat', sans-serif;
     width:700px;
     margin:10px 20px;
     padding:70px 20px;
@@ -219,6 +221,41 @@ h1 {
     top: 130px;
 }
 
+.menuButton {
+    background-color: #374151;
+    color: white;
+    border: none;
+    font-size:16px;
+    margin: 0;
+    padding:0;
+  }
+   
+  .activities {
+    position: absolute;
+    display: none;
+    background-color: #E5E7EB;
+    min-width: 170px;
+    z-index: 1;
+  }
+  
+  .activities a {
+    color: black;
+    padding: 15px;
+    display: block;
+  }
+  
+  .activities a:hover {
+      background-color:#27AE60 ;
+    }
+  
+    .menu:hover .activities {
+        display: block;
+      }
+  
+  .menu:hover .menuButton {
+    color: #27AE60;
+    
+    }
 
 
 /* ========== Profile styling ========== */
