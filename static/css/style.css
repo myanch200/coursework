@@ -33,12 +33,20 @@ a  {
     margin-right: auto;
 }
 
+/*Arrun*/
 .logo-text {
-    font-family: 'Over the Rainbow', cursive;
-    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
     color:white;
 }
-
+/*Arrun*/
+#Health{
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+    font-size: 40px;
+    margin:0;
+    color:red;
+}
 .nav-item-right {
     margin-right: 10px;
 }
