@@ -1,25 +1,26 @@
+
 {% extends 'accounts/base.html' %} {% load static %} {% block content %}
+
+<script src="{% url 'js-catlog' %}"></script>
+<script src="{% static '/admin/js/core.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
 <main class="landing">
     <div class="hero">
          <!--Arrun Code-->
         <div class="textBox">
-        <p>Hello and Welcome to our Sleep Tracker, hope you like it </p>
+        <h1>Sleep Tracker</h1>
             <br>
-        <p>We have created this app in order to help users with mental illness all our health care activties are designed in a way to help these users in the best way possible. </p>
+        <p>Track your sleep  </p>
        <br>
-        <p>Options of healthcare activites users are able to choose from are:</p>
-        <p>Emotion Tracker, Sleep Tracker, Meditation, Exercise Planner and Nutrition Planner</p>
-        <br>
-        <p>In order to access the healthcare activities please create an account if not already done so.</p>
-        </div>
 
+        <form>
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
 
-
-         <!--Arrun Code-->
-        <div class = "image">
-        <img src="{%static 'images/heart.png' %}" width="500" height="500" alt="heart">
-    </div>
-
+            <button type="submit" class="btn btn-register">Add Sleep Time</button>
+        </form>
 
         <div class="content">
 
@@ -29,4 +30,9 @@
 
 
 </main>
+
+{% endblock %}
+
+{% block scripts %}
+
 {% endblock %}

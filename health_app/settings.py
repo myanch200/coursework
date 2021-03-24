@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap_datepicker_plus',
+    'bootstrap4',
+
+
+
     'accounts',
     'tracker', 
     'sleep_tracker'
@@ -131,3 +136,7 @@ if DEBUG:
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

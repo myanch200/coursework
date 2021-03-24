@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from django.views.i18n import JavaScriptCatalog
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
      path('tracker/', include('tracker.urls')),
      path('sleep-tracker/', include('sleep_tracker.urls')),
+     path('jsi18n',JavaScriptCatalog.as_view(), name='js-catlog')
 
 ]
