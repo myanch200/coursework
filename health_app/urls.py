@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
      path('tracker/', include('tracker.urls')),
+     path('sleep-tracker/', include('sleep_tracker.urls')),
+
 ]
