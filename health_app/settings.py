@@ -42,7 +42,6 @@ INSTALLED_APPS = [
 
 
     'accounts',
-    'tracker', 
     'sleep_tracker'
 ]
 
