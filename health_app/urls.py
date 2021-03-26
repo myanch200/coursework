@@ -20,6 +20,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('accounts.urls')),
      path('sleep-tracker/', include('sleep_tracker.urls')),
+     path('emotion-tracker/', include('emotion_tracker.urls')),
+     path('meditation/', include('meditation.urls')),
+     path('exercises/', include('exercises.urls')),
+
+     path('nutrition_planner/', include('nutrition_planner.urls')),
+
+
+
      path('jsi18n',JavaScriptCatalog.as_view(), name='js-catlog')
 
 ]

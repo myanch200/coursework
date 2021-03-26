@@ -3,10 +3,8 @@ from django.urls import path
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
-app_name = "exercises"
+app_name = "meditation"
 urlpatterns = [
-    path('', views.exercise, name='exercise'),
+    path('', views.meditation, name='meditation'),
    
 ]
-
-urlpatterns += static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)

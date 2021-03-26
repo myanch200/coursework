@@ -14,16 +14,41 @@
         <p>Track your sleep  </p>
        <br>
 
-        <form>
-            {% csrf_token %}
-            {{ form.media }}
-            {{ form.as_p }}
-
-            <button type="submit" class="btn btn-register">Add Sleep Time</button>
-        </form>
 
         <div class="content">
-
+            <div class="form-wrapper">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+        
+                    <button type="submit" class="btn btn-register">Add Sleep Time</button>
+                    {% if messages %}
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }} msg" {% endif %}>{{message}}</li>
+                    {% endfor %}
+                {% endif %}
+                </form>
+            </div>
+            
+                <table class="styled-table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Hours</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for sd in sleep_data %}
+                      <tr>
+                        <td>{{sd.start}}/{{sd.end}}</td>
+                        <td>{{sd.calculate_sleep_hours}}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            
+       
         </div>
     </div>
 

@@ -14,10 +14,10 @@
             <button class="menuButton">Health Care Activities</button>
             <div class="activities">
               <a href="{% url 'sleep_tracker:dashboard' %}">Sleep Tracker</a>
-              <a href="">Emotion Tracker</a>
-              <a href="">Nutrition Planner</a>
-              <a href="">Exercise </a>
-              <a href="">Meditation</a>
+              <a href="{% url 'emotion_tracker:emotion_tracker' %}">Emotion Tracker</a>
+              <a href="{% url 'nutrition_planner:nutrition_planner' %}">Nutrition Planner</a>
+              <a href="{% url 'exercises:exercise' %}">Exercise </a>
+              <a href="{% url 'meditation:meditation' %}">Meditation</a>
             </div>
           </div>
     </li>

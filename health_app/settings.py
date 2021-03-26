@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap_datepicker_plus',
 
-
-
+    'exercises',
     'accounts',
-    'sleep_tracker'
+    'sleep_tracker',
+    'emotion_tracker',
+    'nutrition_planner',
+    'meditation',
 ]
 
 MIDDLEWARE = [
