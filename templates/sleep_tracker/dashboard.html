@@ -32,24 +32,8 @@
                 {% endif %}
                 </form>
             </div>
-            <table class="styled-table">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Hours</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    {% for sd in sleep_data %}
-                  <tr>
-                    <td>{{sd.start}}/{{sd.end}}</td>
-                    <td>{{sd.calculate_sleep_hours}}</td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-        
-              <canvas id="myChart" width="400" height="400"></canvas>
+      
+              <canvas id="myChart" width="400" height="250"></canvas>
         </div>
     </div>
 
