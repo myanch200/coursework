@@ -5,6 +5,8 @@ from django.contrib import messages
 from . models import Profile
 from .forms import RegisterUserForm , UpdateProfileForm
 import os
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def home(request):
     return render(request,'accounts/index.html',{})
@@ -50,7 +52,7 @@ def user_logout(request):
     messages.success(request, 'Logged out')
     return redirect('accounts:home')
 
-
+@login_required(login_url='accounts:login')
 def profile(request):
     profile = request.user.profile
     profile = Profile.objects.get(user = request.user)

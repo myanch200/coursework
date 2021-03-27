@@ -4,6 +4,8 @@ from django.contrib import messages
 from .forms import AddSleepForm
 from .models import Sleep
 # Create your views here.
+from django.contrib.auth.decorators import login_required
+@login_required(login_url='accounts:login')
 def sleep_tracker(request):
     form = AddSleepForm(instance = request.user)
     if request.method == 'POST':
