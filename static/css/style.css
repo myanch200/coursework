@@ -265,6 +265,48 @@ p{
     
     }
 
+    /*=======Arrun Nutrition Styling============*/
+.textBoxNutrition{
+    position: relative;
+    top:30px;
+    left:400px;
+    text-align: center;
+    border-radius:10px;
+    margin:10px 20px;
+    padding:10px 20px;
+    width:650px;
+    height:fit-content;
+    min-height:800px;
+    background-color: #F4F6F7;
+    box-sizing: border-box;
+
+    
+    }
+
+    .pineappleImage{
+        position: relative;
+        right:150px;
+    }
+
+    .saladImage{
+        position: relative;
+        right:150px;
+        top:20px;
+    }
+
+    .prawnImage{
+        position: relative;
+        left:150px;
+        bottom:585px;
+        
+    }
+
+    .pomegranateImage{
+        position: relative;
+        left:150px;
+        bottom:550px;
+        margin-bottom:-550px;
+    }
 
 /* ========== Profile styling ========== */
 .profile-form{
