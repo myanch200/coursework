@@ -17,7 +17,7 @@ def sleep_tracker(request):
         else:
             messages.error(request,"Please fill all the fields")
     
-    sleep_data = Sleep.objects.filter(user=request.user.id).order_by('end')[:5]
+    sleep_data = Sleep.objects.filter(user=request.user.id).order_by('end')[:7]
 
     context = {'form': form,'sleep_data': sleep_data}
     return render(request,'sleep_tracker/dashboard.html',context)
