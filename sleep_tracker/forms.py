@@ -1,15 +1,19 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.forms import ModelForm
+import django.forms
 from django import forms
 from .models import Sleep
 from django.contrib.admin.widgets import AdminDateWidget,AdminTimeWidget,AdminSplitDateTime
-class AddSleepForm(ModelForm):
+from bootstrap_datepicker_plus import DateTimePickerInput,DatePickerInput
+class AddSleepForm(forms.ModelForm):
     class Meta:
         model = Sleep
         fields = '__all__'
         exclude = ['user']
         widgets = {
-            'start': AdminSplitDateTime(),
-            'end': AdminSplitDateTime(),
+             "start": DateTimePickerInput(),
+            "end": DateTimePickerInput(),
         }
+       
+
+      

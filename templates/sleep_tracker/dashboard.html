@@ -1,10 +1,12 @@
 
-{% extends 'accounts/base.html' %} {% load static %} {% block content %}
+{% extends 'accounts/base.html' %} {% load static %} 
+ {% block content %}
 
-<script src="{% url 'js-catlog' %}"></script>
-<script src="{% static '/admin/js/core.js' %}"></script>
+ {% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
+ {% bootstrap_css %}         {# Embed Bootstrap CSS #}
+ {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+ {{ form.media }}   {# Adds date-picker required JS and CSS #}
 
-<link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
 <main class="landing">
     <div class="hero">
          <!--Arrun Code-->
@@ -16,13 +18,13 @@
 
 
         <div class="content">
-            <div class="form-wrapper">
+            <div class="form-wrapper" style="position: relative;overflow:visible;">
                 <form method="post">
                     {% csrf_token %}
                     {{ form.media }}
                     {{ form.as_p }}
         
-                    <button type="submit" class="btn btn-register">Add Sleep Time</button>
+                    <button type="submit" class="button btn-register">Add Sleep Time</button>
                     {% if messages %}
                     {% for message in messages %}
                     <li {% if message.tags %} class="{{ message.tags }} msg" {% endif %}>{{message}}</li>
@@ -30,24 +32,23 @@
                 {% endif %}
                 </form>
             </div>
-            
-                <table class="styled-table">
-                    <thead>
-                      <tr>
-                        <th>Date</th>
-                        <th>Hours</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        {% for sd in sleep_data %}
-                      <tr>
-                        <td>{{sd.start}}/{{sd.end}}</td>
-                        <td>{{sd.calculate_sleep_hours}}</td>
-                      </tr>
-                      {% endfor %}
-                    </tbody>
-                  </table>
-            
+            <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Hours</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for sd in sleep_data %}
+                  <tr>
+                    <td>{{sd.start}}/{{sd.end}}</td>
+                    <td>{{sd.calculate_sleep_hours}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        
        
         </div>
     </div>
