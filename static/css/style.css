@@ -279,33 +279,29 @@ p{
     min-height:800px;
     background-color: #F4F6F7;
     box-sizing: border-box;
+    }
 
     
-    }
-
-    .pineappleImage{
-        position: relative;
-        right:150px;
-    }
 
     .saladImage{
-        position: relative;
-        right:150px;
-        top:20px;
+       position: relative;
+       top:20px;
     }
 
-    .prawnImage{
-        position: relative;
-        left:150px;
-        bottom:585px;
-        
-    }
+   
 
     .pomegranateImage{
         position: relative;
-        left:150px;
-        bottom:550px;
-        margin-bottom:-550px;
+        top:10px;
+    }
+
+    .images{
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction:row;
+        gap:40px;
+        justify-content: center;
+        align-items:center;
     }
 
 /* ========== Profile styling ========== */
