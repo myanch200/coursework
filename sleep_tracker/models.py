@@ -11,7 +11,7 @@ class Sleep(models.Model):
     end = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
-        return f'{self.user.username} - {self.start}/{self.end}'
+        return f'{self.start}/{self.end}'
 
     
     def calculate_sleep_hours(self):
@@ -20,4 +20,4 @@ class Sleep(models.Model):
         hours = int(duration // 3600)
         minutes = int((duration % 3600) // 60)
         seconds = int(duration % 60)
-        return f'{hours}:{minutes}'
+        return hours
