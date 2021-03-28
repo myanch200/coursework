@@ -321,6 +321,7 @@ p{
 
     .category{
         padding:10px 30px;
+        overflow: hidden;
     }
 
     .totalTimeServing{
@@ -335,10 +336,10 @@ p{
         padding:20px 10px;
         font-weight:bold;
         color:white;
-        margin:0 30px;
+        margin:10px 30px;
         float:left;
         max-width:fit-content;
-        height:224px;
+        height:fit-content;
         background-color: #1E90FF;
     }
 
