@@ -11,10 +11,17 @@
         <p>Plan your diet   </p>
         <br>
        <div class="images">
-       <fig>
-        <img src="{%static 'images/pineapple.jpg' %}" width="250" height="250" alt="option 1">
-        <figcaption>Pineapple Fried Rice</figcaption>
-       </fig>
+         {% for recipe in recipes  %}
+            <fig>
+
+            <img src="{{recipe.thumbnail.url}}" width="250" height="250" alt="option 1">
+            <figcaption>{{recipe.title}}</figcaption>
+            </fig>
+         {% endfor %}
+        
+       
+
+{% comment %}       
         <fig class="saladImage">
          <img src="{%static 'images/chickensalad.jpg' %}"  width="250" height="250" alt="option 2">
          <figcaption>Chicken , broccoli </figcaption>
@@ -31,7 +38,7 @@
          <img src="{%static 'images/pomegranatechicken.jpg' %}" width="250" height="250" alt="option 4">
          <figcaption>Pomegrante Chicken </figcaption>
          <figcaption>with almond couscous </figcaption>
-        </fig>
+        </fig> {% endcomment %}
      </div>
 
     </div>

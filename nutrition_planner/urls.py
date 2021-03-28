@@ -8,3 +8,4 @@ urlpatterns = [
     path('', views.nutrition_planner, name='nutrition_planner'),
    
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)
