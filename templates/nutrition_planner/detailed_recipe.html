@@ -7,20 +7,28 @@
 <main class="landing">
       <div class="container">
       <h1>{{recipe.title}}</h1>
+            <div class="recipeImage">
          <img src="{{recipe.thumbnail.url}}" width=500 height=500>
+         </div>
+            <div class="recipeMethod">
          {{recipe.content|safe}}
-      
+      </div>
       </div>
       <hr>
+      <div class="nutritionInfo">
       {% comment %} nutrition data {% endcomment %}
       <ul>
       {% for nutrition in nutritions  %}
          <li>{{nutrition.name}} - {{nutrition.value}}g</li>
       {% endfor %}
       </ul>
+      </div>
+      <div class="prepCook">
       <p>Prep time: {{recipe.prep_time}}</p>
       <p>Cook time {{recipe.cook_time}}</p>
+      </div>
       <hr>
+      <div class="totalTimeServing">
       {% if recipe.servings %}
       <p>Total servings {{recipe.servings}}</p>
 
@@ -28,7 +36,9 @@
 
 
       <h3>Total time - {{recipe.get_total_time}}</h3>
+       </div>
       <hr>
+      <div class="category">
       <h3> Categories </h3>
       <ul>
 
@@ -36,9 +46,9 @@
          <li>{{category}}</li>
       {% endfor %}
       </ul>
-
+       </div>
       <hr>
-
+      <div class="ingredients">
       <h3>Ingredients </h3>
       {% if recipe.ingredients %}
          {% for ingredient in recipe.get_ingredients %}
@@ -46,7 +56,7 @@
          {% endfor %}
      
       {% endif %}
-
+</div>
 </main>
 
 {% endblock %}
