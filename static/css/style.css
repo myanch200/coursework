@@ -418,3 +418,22 @@ p{
     transform: translateX(-3em);
     width: fit-content;
   }
+
+
+
+  /* Nutrition planner */
+
+
+  .category-box{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+
+  }
+  .category-item{
+      padding: 0.5em;
+      background-color:#27AE60;
+      border-radius: 10px;
+      width: fit-content;
+  }

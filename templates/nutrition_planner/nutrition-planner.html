@@ -16,6 +16,9 @@
 
             <img src="{{recipe.thumbnail.url}}" width="250" height="250" alt="option 1">
             <figcaption>{{recipe.title}}</figcaption>
+             {% for category in recipe.get_categories  %}
+                  <li class="category-box">{{category}}</li>
+             {% endfor %}
             </fig>
          {% endfor %}
         

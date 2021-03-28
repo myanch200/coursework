@@ -9,8 +9,8 @@ class NutritionInline(admin.StackedInline):
 class AdminRecipe(admin.ModelAdmin):
     fieldsets = [
         ('Headlines',               {'fields': ['title','thumbnail']}),
-        ('Main', {'fields': ['content','description']}),
-        ('Additional', {'fields': ['prep_time','cook_time','categories']}),
+        ('Main', {'fields': ['content','description','ingredients']}),
+        ('Additional', {'fields': ['prep_time','cook_time','servings','categories']}),
 
     ]
     inlines = [NutritionInline]

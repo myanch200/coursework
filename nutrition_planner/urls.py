@@ -6,6 +6,8 @@ from django.conf import settings
 app_name = "nutrition_planner"
 urlpatterns = [
     path('', views.nutrition_planner, name='nutrition_planner'),
+    path('recipe/<pk>', views.detailed_recipe, name='detailed_recipe'),
+
    
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root= settings.MEDIA_ROOT)

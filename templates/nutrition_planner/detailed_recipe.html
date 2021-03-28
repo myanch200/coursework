@@ -1,0 +1,51 @@
+
+{% extends 'accounts/base.html' %} {% load static %} {% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+<main class="landing">
+      <div class="container">
+      <h1>{{recipe.title}}</h1>
+         <img src="{{recipe.thumbnail.url}}" width=500 height=500>
+         {{recipe.content|safe}}
+      
+      </div>
+      <hr>
+      {% comment %} nutrition data {% endcomment %}
+      <ul>
+      {% for nutrition in nutritions  %}
+         <li>{{nutrition.name}} - {{nutrition.value}}g</li>
+      {% endfor %}
+      </ul>
+      <p>Prep time: {{recipe.prep_time}}</p>
+      <p>Cook time {{recipe.cook_time}}</p>
+      <hr>
+      <p>Total servings {{recipe.servings}}</p>
+
+
+      <h3>Total time - {{recipe.get_total_time}}</h3>
+      <hr>
+      <h3> Categories </h3>
+      <ul>
+
+      {% for category in recipe.get_categories  %}
+         <li>{{category}}</li>
+      {% endfor %}
+      </ul>
+
+      <hr>
+
+      <h3>Ingredients </h3>
+      {% if recipe.ingredients %}
+         {% for ingredient in recipe.get_ingredients %}
+               <li>{{ingredient}}</li>
+         {% endfor %}
+     
+      {% endif %}
+
+</main>
+
+{% endblock %}
+
+
