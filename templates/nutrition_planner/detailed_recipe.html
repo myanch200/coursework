@@ -21,7 +21,10 @@
       <p>Prep time: {{recipe.prep_time}}</p>
       <p>Cook time {{recipe.cook_time}}</p>
       <hr>
+      {% if recipe.servings %}
       <p>Total servings {{recipe.servings}}</p>
+
+      {% endif %}
 
 
       <h3>Total time - {{recipe.get_total_time}}</h3>

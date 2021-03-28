@@ -12,14 +12,19 @@
         <br>
        <div class="images">
          {% for recipe in recipes  %}
+         <a href="{% url 'nutrition_planner:detailed_recipe' recipe.id %}">
+
             <fig>
 
             <img src="{{recipe.thumbnail.url}}" width="250" height="250" alt="option 1">
             <figcaption>{{recipe.title}}</figcaption>
+            <div class="category-box">
              {% for category in recipe.get_categories  %}
-                  <li class="category-box">{{category}}</li>
+                  <li class="category-item">{{category}}</li>
              {% endfor %}
+             </div>
             </fig>
+            </a>
          {% endfor %}
         
        
@@ -46,7 +51,7 @@
 
     </div>
 
-        
+   
    
 
 
