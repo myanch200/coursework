@@ -25,6 +25,7 @@ urlpatterns = [
      path('exercises/', include('exercises.urls')),
 
      path('nutrition_planner/', include('nutrition_planner.urls')),
+     path('ckeditor/', include('ckeditor_uploader.urls')),
 
 
 
