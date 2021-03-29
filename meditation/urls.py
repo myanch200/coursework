@@ -6,5 +6,6 @@ from django.conf import settings
 app_name = "meditation"
 urlpatterns = [
     path('', views.meditation, name='meditation'),
+    path('yoga/', views.yoga_main, name='yoga_main')
    
 ]

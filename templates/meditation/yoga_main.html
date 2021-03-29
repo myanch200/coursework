@@ -1,0 +1,45 @@
+
+{% extends 'accounts/base.html' %} {% load static %} {% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+<main class="recipe-main">
+       <div class="card-container">
+
+   {% for article  in articles %}
+    
+      <div class="card-item">
+         <div class="card-header">
+            <img src="{{article.thumbnail.url}}" width="250" height="250" alt="{{article.title}}">
+            <h3 card-title>{{article.title}}</h3>
+         </div>
+         <div class="card-body">
+             <p>{{article.description}}
+             {% comment %} <a href="{% url 'nutrition_planner:detailed_recipe' recipe.id %}">Read more</a> {% endcomment %}
+         </div>
+         {% comment %} <div class="card-footer">
+            {% for category in recipe.get_categories %}
+            
+            <div class="category-container">
+               <p>{{category}}</p>
+            </div> {% endcomment %}
+         
+
+         </div>
+   {% endfor %}
+
+      </div>
+
+   
+  
+   
+   </div>
+
+
+
+</main>
+
+{% endblock %}
+
+
