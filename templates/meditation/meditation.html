@@ -7,17 +7,33 @@
 <main class="landing">
     <div class="hero">
          <!--Arrun Code-->
-        <div class="textBox">
-        <h1>Meditation App</h1>
-            <br>
-        <p>Clear your mind  </p>
+        <div class="meditationTextBox">
+        <h1>Meditation</h1>
+    
+        <p>Choose Music to relax and listen to soft sounds  </p>
+        <br>
+        <p>Choose Yoga to stretch and loosen your body for stress relief </p>
+        <br>
+        <p>Choose Breathing to have a calm and peaceful mind</p>
        <br>
 
 
-        <div class="content">
-          
+        <div class="meditationFlexbox">
             
-       
+            <fig>
+                <img src="{%static 'images/music.jpg' %}" width="350" height="350" alt="music">
+                <figcaption class="meditationName">Music</figcaption>
+            </fig>
+            <fig>
+                <img src="{%static 'images/yoga.jpg' %}" width="350" height="350" alt="yoga">
+                <figcaption class="meditationName">Yoga</figcaption>
+            </fig>
+            <fig>
+                <img src="{%static 'images/meditation.jpg' %}" width="350" height="350" alt="meditation">
+                <figcaption class="meditationName">Breathing</figcaption>
+            </fig>
+            
+        </div>
         </div>
     </div>
 
@@ -26,4 +42,5 @@
 </main>
 
 {% endblock %}
+
 
