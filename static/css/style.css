@@ -297,6 +297,10 @@ p {
     box-sizing: border-box;
 }
 /*=========Yoga detailed==========*/
+
+.yoga-detailed{
+    text-align: center;
+}
 .youtubeVid{
     display:flex;
     flex-direction: row;
