@@ -4,55 +4,38 @@
 
 
 <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
-<main class="landing">
-         <!--Arrun Code-->
-        <div class="textBoxNutrition">
-        <h1>Nutrition planner</h1>
-        <p>Plan your diet   </p>
-        <br>
-       <div class="images">
-         {% for recipe in recipes  %}
-         <a href="{% url 'nutrition_planner:detailed_recipe' recipe.id %}">
+<main class="recipe-main">
+       <div class="card-container">
 
-            <fig>
-
-            <img src="{{recipe.thumbnail.url}}" width="250" height="250" alt="option 1">
-            <figcaption>{{recipe.title}}</figcaption>
-            <div class="category-box">
-             {% for category in recipe.get_categories  %}
-                  <li class="category-item">{{category}}</li>
-             {% endfor %}
-             </div>
-            </fig>
-            </a>
-         {% endfor %}
-        
-       
-
-{% comment %}       
-        <fig class="saladImage">
-         <img src="{%static 'images/chickensalad.jpg' %}"  width="250" height="250" alt="option 2">
-         <figcaption>Chicken , broccoli </figcaption>
-         <figcaption> and beetroot salad</figcaption>
-           <figcaption> with avocado pesto</figcaption>
-        </fig>
+   {% for recipe  in recipes %}
     
-        <fig>
-         <img src="{%static 'images/prawnspaghetti.jpg' %}" width="250" height="250" alt="option 3">
-         <figcaption>Prawn and Harissa Spaghetti </figcaption>
-        </fig>
-     
-        <fig class="pomegranateImage">
-         <img src="{%static 'images/pomegranatechicken.jpg' %}" width="250" height="250" alt="option 4">
-         <figcaption>Pomegrante Chicken </figcaption>
-         <figcaption>with almond couscous </figcaption>
-        </fig> {% endcomment %}
-     </div>
+      <div class="card-item">
+         <div class="card-header">
+            <img src="{{recipe.thumbnail.url}}" width="250" height="250" alt="{{recipe.title}}">
+            <h3 card-title>{{recipe.title}}</h3>
+         </div>
+         <div class="card-body">
+             <p>{{recipe.description}}
+             <a href="{% url 'nutrition_planner:detailed_recipe' recipe.id %}">Read more</a>
+         </div>
+         <div class="card-footer">
+            {% for category in recipe.get_categories %}
+            
+            <div class="category-container">
+               <p>{{category}}</p>
+            </div>
+         
+         {% endfor %}
 
-    </div>
+         </div>
+
+      </div>
 
    
+   {% endfor %}
+  
    
+   </div>
 
 
 

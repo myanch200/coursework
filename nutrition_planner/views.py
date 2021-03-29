@@ -8,6 +8,7 @@ def nutrition_planner(request):
     context = {'recipes':recipes}
     return render(request,'nutrition_planner/nutrition-planner.html',context)
 
+@login_required(login_url='accounts:login')
 def detailed_recipe(request,pk):
     recipe = Recipe.objects.get(id = pk)
     nutritions = Nutrition.objects.filter(recipe= recipe.id)
