@@ -1,0 +1,20 @@
+
+{% extends 'accounts/base.html' %}
+
+{% load static %}
+ {% block content %}
+
+<main class="yoga-detailed">
+      <h1>{{article.title}}</h1>
+      <iframe width="1195" height="672" src="{{article.video_url}}" 
+      title="{{article.title}}" frameborder="0" mute="1"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+      picture-in-picture" allowfullscreen></iframe>
+      <p>{{article.description}}</p>
+     
+</main>
+
+{% endblock %}
+
+
+

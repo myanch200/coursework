@@ -16,6 +16,7 @@
          </div>
          <div class="card-body">
              <p>{{article.description}}
+              <a href="{% url 'meditation:yoga_detailed' article.id %}">Read more</a>
              {% comment %} <a href="{% url 'nutrition_planner:detailed_recipe' recipe.id %}">Read more</a> {% endcomment %}
          </div>
          {% comment %} <div class="card-footer">
