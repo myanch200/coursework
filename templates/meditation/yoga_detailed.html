@@ -6,12 +6,15 @@
 
 <main class="yoga-detailed">
       <h1>{{article.title}}</h1>
+      <div class="youtubeVid">
       <iframe width="1195" height="672" src="{{article.video_url}}" 
       title="{{article.title}}" frameborder="0" mute="1"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
       picture-in-picture" allowfullscreen></iframe>
+</div>
+      <div class="youtubeDescription"> 
       <p>{{article.description}}</p>
-     
+</div>
 </main>
 
 {% endblock %}
