@@ -296,7 +296,18 @@ p {
     text-align:center;
     box-sizing: border-box;
 }
+/*=========Yoga detailed==========*/
+.youtubeVid{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
+.youtubeDescription{
+margin:15px;
+padding:10px 150px;
+
+}
 
 
 
