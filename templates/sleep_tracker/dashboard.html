@@ -1,0 +1,88 @@
+
+{% extends 'accounts/base.html' %} {% load static %} 
+ {% block content %}
+
+ {% load bootstrap4 %}       {# import bootstrap4/bootstrap3 #}
+ {% bootstrap_css %}         {# Embed Bootstrap CSS #}
+ {% bootstrap_javascript jquery='full' %}  {# Embed Bootstrap JS+jQuery #}
+ {{ form.media }}   {# Adds date-picker required JS and CSS #}
+
+<main class="landing">
+    <div class="hero">
+         <!--Arrun Code-->
+        <div class="textBox">
+        <h1>Sleep Tracker</h1>
+            <br>
+        <p>Track your sleep  </p>
+       <br>
+
+
+        <div class="content">
+            <div class="form-wrapper" style="position: relative;overflow:visible;">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+        
+                    <button type="submit" class="button btn-register">Add Sleep Time</button>
+                    {% if messages %}
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }} msg" {% endif %}>{{message}}</li>
+                    {% endfor %}
+                {% endif %}
+                </form>
+            </div>
+      
+              <canvas id="myChart" width="400" height="250"></canvas>
+        </div>
+    </div>
+
+
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: {{labels|safe}},
+        datasets: [{
+            label: 'Your sleep hours',
+            data: {{data|safe}},
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

@@ -1,0 +1,73 @@
+
+{% extends 'accounts/base.html' %}
+{%block extrahead %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+{% endblock %}
+{% load static %}
+ {% block content %}
+
+<main class="recipe-detailed">
+      <section class="recipe-header">
+         <h1>{{recipe.title}}</h1>
+         <img src="{{recipe.thumbnail.url}}" width="500" height="500" alt="{{recipe.title}}">
+         <div class="category-section">
+            {% for category in recipe.get_categories %}
+            
+            <div class="category-container">
+               <p>{{category}}</p>
+            </div>
+         {% endfor %}
+
+         </div>
+      </section>
+      <section class="additional-information">
+      <div class="ingridients-box">
+         <h3>Ingredients</h3>
+         {% for ingredient in recipe.get_ingredients %}
+          
+          <li class="ingredient-item">{{ingredient}}</li>
+          <hr>
+         {% endfor %}
+      </div>
+      <div class="cooking-information">
+         <h3>Cooking Information</h3>
+
+         <div class="info-box prep-information">
+            <i class="fa fa-clock"></i>
+            <p>Prep time: {{recipe.prep_time}}</p>
+         </div>
+         <div class=" info-box cook-information">
+         <i class="fas fa-drumstick-bite"></i>         
+         <p>Cook time: {{recipe.cook_time}}</p>
+         </div>
+         <div class=" info-box servings-information">
+            <i class="fas fa-utensil-spoon"></i>           
+            <p>Servings: {{recipe.servings}}</p>
+         </div>
+      </div>
+      <div class="description-panel">
+         <h3>Description</h3>
+         <p>{{recipe.description}}</p>
+      </div>
+      <div class="nutrition-panel">
+         {% for nutrition in nutritions %}
+            <div class="nutrition-item">
+               <div class="nutrition-box">
+                <p>{{nutrition.value}}g</p>
+               </div>
+               <p>{{nutrition.name}}</p>
+            </div>
+         
+         {% endfor %}
+      </div>
+      </section>
+      <section class="recipe-content">
+         <p>{{recipe.content|safe}}</p>
+      </section>
+</main>
+
+
+{% endblock %}
+
+
+

@@ -1,15 +1,25 @@
  {% load static %}
-<nav class="container">
+<nav class="navbar">
     <li class="nav-item-left">
-        <a class="logo-text" href="{% url 'accounts:home' %}">Health App</a>
+       <a class="logo-text" href="{% url 'accounts:home' %}"><span id="Health">Health</span> App</a><!--Arrun-->
     </li>
     {% if user.is_authenticated %}
 
     <li class="profile-link">
         <a class="" href="{% url 'accounts:profile' %}">Hi, {{ user.username }}</a>
     </li>
-    <li class="profile-link">
-        <a class="" href="{% url 'tracker:dashboard' %}">Tracker</a>
+   
+   <li><!--Arrun-->
+        <div class="menu">
+            <button class="menuButton">Health Care Activities</button>
+            <div class="activities">
+              <a href="{% url 'sleep_tracker:dashboard' %}">Sleep Tracker</a>
+              <a href="{% url 'emotion_tracker:emotion_tracker' %}">Emotion Tracker</a>
+              <a href="{% url 'nutrition_planner:nutrition_planner' %}">Nutrition Planner</a>
+              <a href="{% url 'exercises:exercise' %}">Exercise </a>
+              <a href="{% url 'meditation:meditation' %}">Meditation</a>
+            </div>
+          </div>
     </li>
     <li class="nav-item-right">
         <a class="btn-register" href="{% url 'accounts:logout' %}">Log out</a>
