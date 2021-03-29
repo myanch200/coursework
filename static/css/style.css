@@ -274,82 +274,30 @@ p {
     color: #27AE60;
 }
 
+/*=====Meditation home page=====*/
+.meditationName{
+    text-align:center;
+    font-weight: bold;
+    font-size:20px;
+}
 
-/*=======Arrun Nutrition Styling============*/
+.meditationFlexbox{
+    display:flex;
+    flex-direction: row;
+    gap:50px;
+    justify-content: center;
+    padding:20px 0;
+}
 
-.textBoxNutrition {
-    position: relative;
-    top: 30px;
-    left: 400px;
-    text-align: center;
-    border-radius: 10px;
+.meditationTextBox {
+    width: 1500px;
     margin: 10px 20px;
-    padding: 10px 20px;
-    width: 650px;
-    height: fit-content;
-    min-height: 800px;
-    background-color: #F4F6F7;
+    padding: 30px 20px;
+    text-align:center;
     box-sizing: border-box;
 }
 
-.saladImage {
-    position: relative;
-    top: 20px;
-}
 
-.pomegranateImage {
-    position: relative;
-    top: 10px;
-}
-
-.images {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/*=====Arrun detailed recipe styling========*/
-
-.recipeImage {
-    padding: 10px 30px;
-}
-
-.recipeMethod {
-    padding: 10px 10px;
-}
-
-.ingredients {
-    background-color: white;
-    padding: 20px 30px;
-}
-
-.category {
-    padding: 10px 30px;
-    overflow: hidden;
-}
-
-.totalTimeServing {
-    padding: 10px 30px;
-}
-
-.prepCook {
-    padding: 20px 30px;
-}
-
-.nutritionInfo {
-    padding: 20px 10px;
-    font-weight: bold;
-    color: white;
-    margin: 10px 30px;
-    float: left;
-    max-width: fit-content;
-    height: fit-content;
-    background-color: #1E90FF;
-}
 
 
 /* ========== Profile styling ========== */
