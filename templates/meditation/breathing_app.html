@@ -1,0 +1,27 @@
+
+{% extends 'accounts/base.html' %} {% load static %} {% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+<main class="breathing-main">
+     
+    <div class="container">
+        <div class="inner-circle"></div>
+        <p id="text"></p>
+        <div class="cursor-container">
+            <div class="cursor"></div>
+        </div>
+        <div class="outer-circle"></div>
+    </div>
+
+
+</main>
+<script src="{% static 'js/app.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+   

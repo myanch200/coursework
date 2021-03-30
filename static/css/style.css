@@ -590,3 +590,132 @@ padding:10px 150px;
 .excercises {
     background-color: rgb(37, 3, 230);
 }
+
+
+
+
+/* Breathing app */
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+.breathing-main{
+    background: #0e2a4b ;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    margin:auto;
+    
+
+}
+.inner-circle{
+    background-color:  #0d509c;
+ 
+
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position:absolute;
+    top: 0;
+    left:0;
+    z-index:2;
+}
+#text{
+    font-size: 30px;
+    color: white;
+    font-family: "Helvetica Neue", "Helvetica";
+    z-index: 3;
+}
+.outer-circle{
+    background: conic-gradient(
+        #ff5da7 0%,
+        #ff5da7 40%,
+    white 40%,
+    white 60%,
+    #ff3e59 60%,
+    #ff3e59 100%
+  );
+    width: 330px;
+    height: 330px;
+    position: absolute;
+    top: -10;
+    left: -10;
+    border-radius: 50%;
+    z-index: -1;
+}
+.cursor-container{
+    width: 20px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 140px;
+    z-index: 4;
+    animation: rotation 10s linear forwards infinite;
+    transform-origin: bottom center;
+
+
+}
+.cursor{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 5;
+
+}
+.container.grow{
+    animation: grow 4s linear forwards;
+}
+.container.shrink{
+    animation: shrink 4s linear forwards;
+}
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow{
+    from{
+        transform: scale(.8);
+
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes shrink{
+    from{
+        transform: scale(1);
+
+    }
+    to {
+        transform: scale(.8);
+    }
+}
+/* 
+
+
+
+*/
