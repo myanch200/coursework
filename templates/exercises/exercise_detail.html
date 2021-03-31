@@ -1,0 +1,26 @@
+
+{% extends 'accounts/base.html' %}
+
+{% load static %}
+ {% block content %}
+
+<main class="exercise-detailed">
+      <h1>{{exercise.title}}</h1>
+      <div class="exercise-content-box">
+      <iframe width="600" height="400" src="{{exercise.video_url}}" 
+      title="{{exercise.title}}" frameborder="0" mute="1"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+      picture-in-picture" allowfullscreen></iframe>
+      <div class="steps-box">
+        <p>{{exercise.content|safe}}</p>
+      </div>
+</div>
+      <div class="youtubeDescription"> 
+      <p>{{exercise.description}}</p>
+</div>
+</main>
+
+{% endblock %}
+
+
+

@@ -6,6 +6,7 @@ from django.conf import settings
 app_name = "exercises"
 urlpatterns = [
     path('', views.exercise, name='exercise'),
+    path('articles/<pk>',views.exercise_detail, name='exercise_detail'),
    
 ]
 

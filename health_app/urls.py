@@ -26,9 +26,6 @@ urlpatterns = [
 
      path('nutrition_planner/', include('nutrition_planner.urls')),
      path('ckeditor/', include('ckeditor_uploader.urls')),
-
-
-
      path('jsi18n',JavaScriptCatalog.as_view(), name='js-catlog')
 
 ]

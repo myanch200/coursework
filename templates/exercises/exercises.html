@@ -17,9 +17,9 @@
                 <div class="difficulty-box easy">
                     <span class="difficulty-text">{{exercise.difficulty}}</span>
                 </div>
-                <div class="cta-box">
-                    <a href="#" class="cta-text">Try it</a>
-                </div>
+                
+                    <a href="{% url 'exercises:exercise_detail' exercise.id %}" class="cta-box">Try</a>
+                
             </div>
                 <hr>
             </div>

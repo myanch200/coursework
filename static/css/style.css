@@ -10,15 +10,15 @@ body {
     background-color: #E5E7EB;
 }
 
-li {
-    list-style: none;
-    margin-left: 20px;
-}
+
 
 a {
     text-decoration: none;
 }
-
+.navbar li {
+    list-style: none;
+    padding: 20px;
+}
 .navbar {
     background-color: #374151;
     color: #fff;
@@ -59,6 +59,9 @@ a {
 
 .profile-link>a {
     color: white;
+}
+.profile-link{
+    list-style: none;
 }
 
 .btn-login {
@@ -803,11 +806,10 @@ text-decoration: none;
 .cta-box:hover{
 
 background-color: #5377EF;
+color:white;
 
 }
-.cta-box:hover .cta-text{
-color:white;
-}
+
 .difficulty-text{
 
 color: white;
@@ -819,4 +821,22 @@ margin: 10px;
 }
 .card-body{
     margin: 10px;
+}
+
+.exercise-content-box{
+    display: flex;
+    margin-left: 2rem;
+    
+}
+.steps-box{
+    margin-left: 1.5rem;
+    min-height:400px ;
+    width: 600px;
+    padding: 1.5rem;
+    text-overflow: wrap;
+    background-color: white;
+}
+.steps-box p {
+    line-height: 2rem;
+    text-align: left;
 }
