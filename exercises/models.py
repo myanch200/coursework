@@ -15,6 +15,6 @@ class Exercise(models.Model):
     difficulty = models.CharField(max_length=250, null=True, choices=DIFFICULTY_CHOICES)
     content = RichTextField()
     description = models.TextField(null=True)
-    acreditations = models.CharField(max_length=300,null=True)
+    image_source = models.CharField(max_length=300,null=True)
     def __str__(self):
         return self.title
