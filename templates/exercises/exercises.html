@@ -1,27 +1,47 @@
- {% extends 'accounts/base.html' %} {% load static %} {% block content %}
+
+{% extends 'accounts/base.html' %} {% load static %} {% block content %}
 
 
 
 <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
-<main class="landing">
-    <div class="excercises">
-        <!--Arrun Code-->
-        <div class="textBox">
-            <h1>Exercises</h1>
-            <br>
-            <p>Find your passion, be a better version of yourself</p>
-            <br>
+<main class="exercise-main">
+       
 
-
-            <div class="content">
-
-
-
+   {% for exercise  in exercises %}
+    
+      <div class="card-item">
+            <div class="card-header">
+                <img src="{{exercise.thumbnail.url}}" width="300" height="300">
+                <h2 class="card-title">{{exercise.title}}</h2>
+                <div class="labels-wrapper">
+                <div class="difficulty-box easy">
+                    <span class="difficulty-text">{{exercise.difficulty}}</span>
+                </div>
+                <div class="cta-box">
+                    <a href="#" class="cta-text">Try it</a>
+                </div>
             </div>
-        </div>
+                <hr>
+            </div>
+            <div class="card-body">
+                <p class="card-description">{{exercise.description}}</p>
+            </div>
+
+      
+</div>
+
+   {% endfor %}
+
+   
+
+   
+  
+   
 
 
 
 </main>
 
 {% endblock %}
+
+
