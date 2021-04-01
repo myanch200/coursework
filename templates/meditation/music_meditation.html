@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
 <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
-<main class="music-main">
+<main id="musicMain" class="music-main">
 
  <div class="timer-container">
         <div class="time-selector">
@@ -25,7 +25,7 @@
                       
                     </audio>
 
-                    <audio src="{% static 'sounds/beach.mp3' %}" id="rainSound" >
+                    <audio src="{% static 'sounds/rain.mp3' %}" id="rainSound" >
                         
                     </audio>
                     <p class="time-text">0:00</p>
@@ -61,7 +61,7 @@ let rainSound = document.getElementById("rainSound");
 let backgroundSound = rainSound;
 let realDuration = 10;
 
-let body = document.getElementsByTagName('body')[0];
+let body = document.getElementById("musicMain");
 
 
 playPauseButton.addEventListener("click",controlTimer);
@@ -82,12 +82,14 @@ function setSound(soundName){
     switch(soundName){
         case 'beach':
             backgroundSound = beachSound;
-            body.style.backgroundImage = `url("{% static 'images/beach.jpg' %})`;
+            body.style.background = `url("{% static 'images/beach.jpg' %}"`;
+            body.style.backgroundSize = 'cover';
             
             break;
         case 'rain':
             backgroundSound = rainSound;
-            body.style.backgroundImage = `url("{% static 'images/rain.jpg' %})`;
+            body.style.background = `url("{% static 'images/rain.jpg' %}"`;
+            body.style.backgroundSize = 'cover';
             
             break;
     }
