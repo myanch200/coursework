@@ -913,3 +913,18 @@ margin: 10px;
     border:0;
     outline:none;
 }
+.reset-button{
+    background-color:white;
+    border:0;
+    outline:none;
+}
+
+.reset-button i {
+    font-size: 24px;
+    color: #33A5FF;
+    margin-left: 1rem;
+}
+.timer-controllers{
+    display: flex;
+    
+}
