@@ -54,9 +54,10 @@
 
 <script>
 let playPauseButton = document.querySelector(".play-pause-button");
+let resetButton = document.querySelector(".reset-button");
+
 let timeText = document.querySelector(".time-text");
 let timeSelect = document.getElementById("timeSelect");
-
 let soundSelect = document.getElementById("soundSelect");
 let beachSound = document.getElementById("beachSound");
 let rainSound = document.getElementById("rainSound");
@@ -67,7 +68,16 @@ let body = document.getElementById("musicMain");
 
 
 playPauseButton.addEventListener("click",controlTimer);
+resetButton.addEventListener('click',resetSound);
 
+
+
+function resetSound(){
+    backgroundSound.pause();
+    backgroundSound.currentTime = 0;
+    playPauseButton.innerHTML = `<i class="fas fa-play"></i>`;
+
+}
 
 function checkSong(song){
     if(song.paused){
