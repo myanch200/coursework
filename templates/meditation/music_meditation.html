@@ -82,12 +82,18 @@ function setSound(soundName){
     switch(soundName){
         case 'beach':
             backgroundSound = beachSound;
+            rainSound.pause();
+            rainSound.currentTime = 0;
+
             body.style.background = `url("{% static 'images/beach.jpg' %}"`;
             body.style.backgroundSize = 'cover';
             
             break;
         case 'rain':
             backgroundSound = rainSound;
+            beachSound.pause();
+            beachSound.currentTime = 0;
+
             body.style.background = `url("{% static 'images/rain.jpg' %}"`;
             body.style.backgroundSize = 'cover';
             
@@ -110,11 +116,13 @@ function setTime(timeDuration){
 }
 
 function controlTimer(e) {
+
      e.preventDefault();
      let soundName = soundSelect.options[soundSelect.selectedIndex].value;
      let timeDuration = timeSelect.options[timeSelect.selectedIndex].value;
-
+     
      setTime(timeDuration);
+
      setSound(soundName);
      checkSong(backgroundSound);
      
