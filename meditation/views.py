@@ -19,3 +19,6 @@ def yoga_detailed(request,pk):
 
 def breathing_app(request):
     return render(request,'meditation/breathing_app.html')
+
+def music_meditation(request):
+    return render(request,'meditation/music_meditation.html')

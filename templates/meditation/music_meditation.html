@@ -1,0 +1,149 @@
+
+{% extends 'accounts/base.html' %} {% load static %} 
+
+{% block content %}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+<main class="music-main">
+
+ <div class="timer-container">
+        <div class="time-selector">
+            <select class="time-select" name="" id="timeSelect">
+                <option value="120">2 Minutes</option>
+                <option value="300">5 Minutes</option>
+                <option value="600">10 Minutes</option>
+
+            </select>
+        </div>
+        <div class="time-display">
+            <div class="time-outer-circle">
+                <div class="time-inner-circle">
+                    <audio src="{% static 'sounds/beach.mp3' %}" id="beachSound" >
+                      
+                    </audio>
+
+                    <audio src="{% static 'sounds/beach.mp3' %}" id="rainSound" >
+                        
+                    </audio>
+                    <p class="time-text">0:00</p>
+                    <button class="play-pause-button"><i class="fa fa-play" aria-hidden="true"></i></button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="sound-selector">
+            <select class="sound-select" name="" id="soundSelect">
+                <option value="beach">Beach</option>
+                <option value="rain">Rain</option>
+              
+
+            </select>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+<script>
+let playPauseButton = document.querySelector(".play-pause-button");
+let timeText = document.querySelector(".time-text");
+let timeSelect = document.getElementById("timeSelect");
+
+let soundSelect = document.getElementById("soundSelect");
+let beachSound = document.getElementById("beachSound");
+let rainSound = document.getElementById("rainSound");
+let backgroundSound = rainSound;
+let realDuration = 10;
+
+let body = document.getElementsByTagName('body')[0];
+
+
+playPauseButton.addEventListener("click",controlTimer);
+
+
+function checkSong(song){
+    if(song.paused){
+        song.play();
+        playPauseButton.innerHTML =`<i class="fas fa-pause"></i>`
+    }else{
+        song.pause();
+        playPauseButton.innerHTML =`<i class="fas fa-play"></i>`
+
+    }
+}
+
+function setSound(soundName){
+    switch(soundName){
+        case 'beach':
+            backgroundSound = beachSound;
+            body.style.backgroundImage = `url("{% static 'images/beach.jpg' %})`;
+            
+            break;
+        case 'rain':
+            backgroundSound = rainSound;
+            body.style.backgroundImage = `url("{% static 'images/rain.jpg' %})`;
+            
+            break;
+    }
+}
+
+function setTime(timeDuration){
+    switch(timeDuration){
+        case '120':
+            realDuration = 120;
+            break;
+        case '300':
+            realDuration = 300;
+            break;
+        case '600':
+            realDuration = 600;
+            break;
+    }
+}
+
+function controlTimer(e) {
+     e.preventDefault();
+     let soundName = soundSelect.options[soundSelect.selectedIndex].value;
+     let timeDuration = timeSelect.options[timeSelect.selectedIndex].value;
+
+     setTime(timeDuration);
+     setSound(soundName);
+     checkSong(backgroundSound);
+     
+
+
+     
+
+     backgroundSound.ontimeupdate = function(){
+        let currentTime =  backgroundSound.currentTime;
+        let elapse = realDuration - currentTime;
+        let minutes = Math.floor(elapse/60);
+        let seconds = Math.floor(elapse %60);
+        timeText.textContent = `${minutes}:${seconds}`;
+
+
+        if(currentTime >= realDuration){
+            backgroundSound.pause();
+            backgroundSound.currentTime = 0;
+            playPauseButton.innerHTML = `<i class="fas fa-play"></i>`;
+        }
+     };
+ }
+
+
+ 
+
+</script>
+{% endblock %}
+
+
+
+
+
+   
