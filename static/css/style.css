@@ -928,3 +928,81 @@ margin: 10px;
     display: flex;
     
 }
+
+
+/* 
+    Emotion tracker
+*/
+.emotion-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.emotion-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.radio-fieldset{
+    display: flex;
+}
+.radio-field{
+  background-color: white;
+    padding:20px;
+    margin:20px;
+    width: 200px;
+    height: 200px;
+    font-size: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+      
+}
+#id_comment{
+    
+    margin-top: 50px;
+    width: 700px;
+    
+    
+}
+.angry-div{
+    border: 5px solid #dd2c2f;
+}
+
+.happy-div{
+    border: 5px solid #29bf12;
+
+}
+
+.sad-div{
+    border: 5px solid #3c096c;
+
+}
+
+.excited-div{
+    border: 5px solid #ffb700;/* #fb8500;*/
+
+}
+
+
+.happy-active{
+    background-color: #29bf12;
+    color: #e3e3e3;
+}
+.excited-active{
+    background-color: #ffb700;
+    color: #e3e3e3;
+}
+
+.sad-active{
+    background-color: #3c096c;
+    color: #e3e3e3;
+}
+.angry-active{
+    background-color: #dd2c2f;
+    color: #e3e3e3;
+}
