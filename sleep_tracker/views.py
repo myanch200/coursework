@@ -28,3 +28,4 @@ def sleep_tracker(request):
 
     context = {'form': form, 'sleep_data':sleep_data,'labels':labels,'data':data}
     return render(request,'sleep_tracker/dashboard.html',context)
+

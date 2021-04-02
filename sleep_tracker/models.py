@@ -21,4 +21,4 @@ class Sleep(models.Model):
         minutes = int((duration % 3600) // 60)
         seconds = int(duration % 60)
         total = hours + minutes/60
-        return round(total,2)
+        return round(total)
