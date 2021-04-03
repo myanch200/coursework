@@ -11,7 +11,7 @@
             <form class="emotion-form" method="post">
                 {% csrf_token %}
                 <div class="radio-fieldset">
-                {{form.emotion.label}}
+                
                 {% for field in form.emotion  %}
                     <div class="radio-field">
                         {{ field}}
@@ -19,11 +19,13 @@
                 {% endfor %}
                 </div>
                 <div class="comment-field">
+                <label for="id_comment">Add Comment</label>
                 {{form.comment}}
                 
                 </div>
 
-                <button type="submit">Submit</button>
+                <button class="btn-emotion-submit" type="submit">Submit</button>
+
             </form>
          
 

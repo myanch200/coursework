@@ -505,7 +505,16 @@ padding:10px;
     color: rgb(248, 244, 244);
     border-radius: 10px;
 }
-
+.label-purple{
+    color:rgb(119, 22, 119);
+}
+.label-green{
+    color:rgb(8, 138, 15);
+}
+.category-wrapper{
+    display: flex;
+    flex-direction: column;
+}
 .additional-information {
     display: flex;
     justify-content: flex-start;
@@ -588,6 +597,14 @@ padding:10px;
     line-height: 2rem;
 }
 
+.allergens-warning{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.warning-text{ 
+    color:#dd2c2f;
+    font-size: 15px;
+}
 
 /* Nutrition planner */
 
