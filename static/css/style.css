@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #E5E7EB;
+    background-color: #eff7f6; /* E5E7EB*/
 }
 
 
@@ -977,7 +977,9 @@ margin: 10px;
 #id_comment{
     
     margin-top: 50px;
+    height: 50px;
     width: 700px;
+    border-radius: 10px;
     
     
 }
@@ -1050,9 +1052,10 @@ margin: 10px;
     width: 70%;
     border-collapse: collapse;
     text-align: left;
+    margin-bottom: 5rem;
 }
 .emotion_table,.emotion_table td{
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     padding: 1em;
 
 }
@@ -1087,4 +1090,25 @@ margin: 10px;
 .cta-delete:hover{
     background-color: #dd2c2f;
     color: white;
+}
+
+.emotion-page-title{
+    font-size: 1.5rem;
+    font-weight: italic;
+}
+.btn-emotion-submit{
+    padding: 0.7rem;
+    background-color: white;
+    border: 1px solid #27AE60;
+    border-radius: 10px;
+    margin-top: 1rem;
+    width: 100px;
+    margin-bottom: 2rem;
+
+}
+
+.btn-emotion-submit:hover{
+    background-color: #27ae60;
+    color: white;
+    transition: ease-in 0.2s;
 }

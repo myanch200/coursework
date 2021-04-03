@@ -2,16 +2,15 @@
 {% extends 'accounts/base.html' %} {% load static %} {% block content %}
 
 
-
 <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
 <main class="emotion-main">
    
     
-          
+          <h1 class="emotion-page-title">Express your feelings</h1>
             <form class="emotion-form" method="post">
                 {% csrf_token %}
                 <div class="radio-fieldset">
-                {{form.emotion.label}}
+                
                 {% for field in form.emotion  %}
                     <div class="radio-field">
                         {{ field}}
@@ -23,7 +22,7 @@
                 
                 </div>
 
-                <button type="submit">Submit</button>
+                <button class="btn-emotion-submit" type="submit">Submit</button>
             </form>
          
    
