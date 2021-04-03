@@ -1051,7 +1051,7 @@ margin: 10px;
     border-collapse: collapse;
     text-align: left;
 }
-th,td{
+.emotion_table,.emotion_table td{
     border: 1px solid black;
     padding: 1em;
 
