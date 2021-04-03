@@ -26,48 +26,11 @@
                 <button type="submit">Submit</button>
             </form>
          
-   
-<table class="emotion-table">
-	<thead>
-	<tr class="table-headers">
-    <th>Date</th>
-    <th>Emotion</th>
-    <th>Comment rate</th>
-    <th>Details</th>
-    <th>Update</th>
-
-    
-	</tr>
-	</thead>
-	<tbody>
-     {% for result in results %}
-
-    <tr>
-      <td>{{result.date}}</td>
-      <td>{{result.emotion}}</td>
-      <td>{{result.comment}}</td>
-      <td>
-      <a class="cta-box cta-update" href="{% url 'emotion_tracker:emotion_update' result.id %}">Update</a></td>
-
-      </td>
-      <td>  
-            <a class="cta-box cta-delete" onclick="return confirm('Are you sure?')" href="{% url 'emotion_tracker:emotion_delete' result.id %}">Delete</a>
-
-
-      </td>
-    </tr>
-    {% endfor %}
-
-    </tbody>
-    </table>
-    
-
 
 </main>
 
 
 
 <script src="{% static 'js/emotion_tracker.js'%}"></script>
-
 {% endblock %}
 

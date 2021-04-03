@@ -1,0 +1,35 @@
+
+{% extends 'accounts/base.html' %} {% load static %} {% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+<main class="emotion-main">
+   <div class="card-item">
+       {% if result %}
+            {% if result.emotion == 'happy' %}
+                <p>Happy 😀</p>
+            {% elif result.emotion == 'excited'%}
+                <p>Excited 🤩</p>
+            {% elif result.emotion == 'angry'%}
+                <p>Angry 😡</p>
+            {% elif result.emotion == 'sad'%}
+                <p>Sad 😭</p>
+            {% else %}
+            {% endif %}
+       
+       <p>{{result.comment}}</p>
+       <p>{{result.date}}</p>
+     
+       {% endif %}
+   </div>
+    
+
+
+</main>
+
+
+
+
+{% endblock %}
+

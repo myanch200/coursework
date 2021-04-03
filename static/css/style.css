@@ -798,8 +798,13 @@ border: 2px solid #5377EF;
 border-radius: 5px;
 padding: 12px 20px;
 transition: 0.6s ease-in-out;
+color:#5377EF
 
 }
+.cta-box:visited,.cta-box:link,cta-box:active{
+    color: #5377EF;
+}
+
 .cta-text{
 text-decoration: none;
 }
@@ -937,6 +942,7 @@ margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
 }
 .emotion-form{
@@ -944,6 +950,9 @@ margin: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
+    margin: 2rem;
+    padding: 2rem;
     
 }
 .radio-fieldset{
@@ -961,6 +970,9 @@ margin: 10px;
    align-items: center;
    border-radius: 50%;
       
+}
+.radio-field label{
+    cursor: pointer;
 }
 #id_comment{
     
@@ -987,6 +999,32 @@ margin: 10px;
     border: 5px solid #ffb700;/* #fb8500;*/
 
 }
+.happy-div:hover{
+    background-color: #29bf12;
+    color: #e3e3e3;
+    cursor: pointer;
+
+}
+.excited-div:hover{
+    background-color: #ffb700;
+    color: #e3e3e3;
+    cursor: pointer;
+
+}
+
+.sad-div:hover{
+    background-color: #3c096c;
+    color: #e3e3e3;
+    cursor: pointer;
+
+}
+.angry-div:hover{
+    background-color: #dd2c2f;
+    color: #e3e3e3;
+    cursor: pointer;
+}
+
+
 
 
 .happy-active{
@@ -1005,4 +1043,48 @@ margin: 10px;
 .angry-active{
     background-color: #dd2c2f;
     color: #e3e3e3;
+}
+
+
+.emotion-table{
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+}
+th,td{
+    border: 1px solid black;
+    padding: 1em;
+
+}
+
+.emotion-detailed{
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-update{
+    border: 1px solid  #ffb700;
+    color: #ffb700;
+
+}
+.cta-update:link, .cta-update:visited,.cta-update:active{
+    color: #ffb700;
+}
+.cta-update:hover{
+    background-color: #ffb700;
+    color: white;
+}
+.cta-delete{
+    border: 1px solid  #dd2c2f;
+    color: #dd2c2f;
+}
+
+.cta-delete:link, .cta-delete:visited,.cta-delete:active{
+    color: #dd2c2f;
+}
+.cta-delete:hover{
+    background-color: #dd2c2f;
+    color: white;
 }
