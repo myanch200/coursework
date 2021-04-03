@@ -21,7 +21,7 @@ def emotion_tracker(request):
        'form': form,'results':diary_results
     }
     return render(request,'emotion_tracker/emotion-tracker.html',context)
-
+@login_required(login_url='accounts:login')
 def update_emotion(request,pk):
     emotion_entry = Diary.objects.get(id=pk)
     form = DiaryForm(instance=emotion_entry)
@@ -35,13 +35,14 @@ def update_emotion(request,pk):
     }
     return render(request,'emotion_tracker/emotion_update.html',context)
 
+
+@login_required(login_url='accounts:login')
 def emotion_detail(request,pk):
     diary_results = Diary.objects.filter(user=request.user)
     diary_entry = diary_results.get(id=pk)
-    
-    
-   
     return render(request,'emotion_tracker/emotion_details.html',{'result':diary_entry})
+
+@login_required(login_url='accounts:login')
 def delete_emotion(request,pk):
     emotions_entry = Diary.objects.filter(user=request.user)
     emotion = emotions_entry.get(id=pk)
