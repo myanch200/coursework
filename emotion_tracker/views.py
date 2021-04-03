@@ -16,7 +16,7 @@ def emotion_tracker(request):
             comment = form.cleaned_data.get('comment')
             diary = Diary(user=request.user,emotion=emotion,comment=comment)
             diary.save()
-            
+            return redirect('emotion_tracker:emotion_tracker')            
     context = {
        'form': form,'results':diary_results
     }
