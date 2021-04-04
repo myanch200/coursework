@@ -315,6 +315,21 @@ p {
 
 /*=========Yoga detailed==========*/
 
+
+.yoga-read-more{
+    color: #22bf50;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #22bf50;
+    transition: ease-in-out 0.8;
+    border-radius:10px;
+}
+.yoga-read-more:hover{
+    background-color: #22bf50;
+    color: white;
+    -webkit-box-shadow: 7px 2px 13px 2px rgba(0,0,0,0.75); 
+    box-shadow: 7px 2px 13px 2px rgba(0,0,0,0.5);
+}
 .yoga-detailed{
     text-align: center;
 }
