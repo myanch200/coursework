@@ -1,15 +1,15 @@
-# Group 6A Coursework
+# Group A6 Coursework
 
 # Table of Contents
 
 
 
-- [Group 6A Coursework](#group-6a-coursework)
+- [Group A6 Coursework](#group-a6-coursework)
 - [Table of Contents](#table-of-contents)
   - [Getting started](#getting-started)
-    - [Install virtualenv (Windows)](#install-virtualenv-windows)
-    - [Create a new virtual environment inside the project (Windows)](#create-a-new-virtual-environment-inside-the-project-windows)
-    - [Activate your environment (Windows)](#activate-your-environment-windows)
+    - [Install virtualenv (Windows) - optional](#install-virtualenv-windows---optional)
+    - [Create a new virtual environment inside the project (Windows) - optional](#create-a-new-virtual-environment-inside-the-project-windows---optional)
+    - [Activate your environment (Windows) - optional](#activate-your-environment-windows---optional)
     - [Install all the dependencies from requirements.txt](#install-all-the-dependencies-from-requirementstxt)
     - [Navigate to localhost:8000](#navigate-to-localhost8000)
   - [Project showcase](#project-showcase)
@@ -27,14 +27,14 @@ To get started with project you would need to have [python](https://www.pythonor
 
 Once cloned the project open the terminal and navigate to the project directory.
 
-### Install virtualenv (Windows)
+### Install virtualenv (Windows) - optional
     py -m pip install --user virtualenv
 
-### Create a new virtual environment inside the project (Windows)
+### Create a new virtual environment inside the project (Windows) - optional
 
     py -m venv env
 
-### Activate your environment (Windows)
+### Activate your environment (Windows) - optional
 
     .\env\Scripts\activate
 
@@ -49,6 +49,23 @@ run the project by typing:
     python manage.py runserver
 
  ### Navigate to localhost:8000
+
+ After you type the command above in the terminal you should now see the following lines:
+
+    Watching for file changes with StatReloader
+    Performing system checks...
+    System check identified no issues (0 silenced).
+    April 08, 2021 - 13:59:10
+    Django version 3.1.6, using settings 'health_app.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.
+
+
+You have to copy the following link 
+    http://127.0.0.1:8000/
+
+
+
 
 ## Project showcase
 &nbsp;
