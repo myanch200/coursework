@@ -61,7 +61,7 @@ run the project by typing:
     Quit the server with CONTROL-C.
 
 
-You have to copy the following [link](http://127.0.0.1:8000/)
+You have to click the following [link](http://127.0.0.1:8000/)
 
 
 
