@@ -70,3 +70,11 @@ In these next lines I am going to show you parts of our project if you want to s
 
 ### And the last one is the nutrtion planner app more precisely  one of the recipes that the app includes
 
+
+
+![Music meditation](readme_images/../readme-images/recipe_1.png)
+
+&nbsp;
+
+
+![Music meditation](readme_images/../readme-images/recipe_2.png)
